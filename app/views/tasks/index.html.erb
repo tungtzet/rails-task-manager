@@ -2,7 +2,10 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.completed ? '☑' : '☐' %> <%= link_to task.title, task_path(task) %></li>
+    <li>
+      <%= task.completed ? '☑' : '☐' %> <%= link_to task.title, task_path(task) %> 
+      <%= link_to "x", task_path(task), method: :delete %>
+    </li>
   <% end %>
 </ul>
 
